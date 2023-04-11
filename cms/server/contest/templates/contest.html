@@ -48,32 +48,39 @@ $(document).ready(function () {
 
 {% block body %}
         <div id="navigation_bar" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="{{ contest_url() }}">{{ contest.description }}</a>
-{% if available_translations|length > 1 %}
-                    <p class="navbar-text pull-right">
-                        <select id="lang" class="form-control btn btn-info" onchange="utils.switch_lang()">
-                            <option value=""{% if cookie_translation is none %} selected{% endif %}>{% trans lang=automatic_translation.name %}Automatic ({{ lang }}){% endtrans %}</option>
-                        {% for lang_code, t in available_translations|dictsort(by="key") %}
-                            <option value="{{ lang_code }}"{% if t == cookie_translation %} selected{% endif %}>{{ t.name }}</option>
-                        {% endfor %}
-                        </select>
-                    </p>
-{% endif %}
-{% if participation is defined %}
-                    <form action="{{ contest_url("logout") }}" method="POST" class="navbar-form pull-right">
-                        {{ xsrf_form_html|safe }}
-                        <button type="submit" class="btn btn-warning">{% trans %}Logout{% endtrans %}</button>
-                    </form>
-                    <p class="navbar-text pull-right">
-                        {% trans first_name=user.first_name,
-                                 last_name=user.last_name,
-                                 username=user.username %}
-                            Logged in as <strong>{{ first_name }} {{ last_name }}</strong> <em>({{ username }})</em>
-                        {% endtrans %}
-                    </p>
-{% endif %}
+            <div class="custom-navbar-inner navbar-inner">
+                <div class="custom-container container">
+                    <div class="custom-logo-holder">
+                        <img src={{ url("static", "img", "gerb.png") }}>
+                        <a class="custom-brand brand" href="{{ contest_url() }}">{{ contest.description }}</a>
+                    </div>
+                    
+                    <div class="custom-header-buttons">
+    {% if participation is defined %}
+                        <p class="navbar-text">
+                            {% trans first_name=user.first_name,
+                                    last_name=user.last_name,
+                                    username=user.username %}
+                                Logged in as <strong>{{ first_name }} {{ last_name }}</strong> <em>({{ username }})</em>
+                            {% endtrans %}
+                        </p>
+                        <form action="{{ contest_url("logout") }}" method="POST" class="navbar-form">
+                            {{ xsrf_form_html|safe }}
+                            <button type="submit" class="btn btn-warning">{% trans %}Logout{% endtrans %}</button>
+                        </form>
+    {% endif %}
+
+    {% if available_translations|length > 1 %}
+                        <p class="navbar-text">
+                            <select id="lang" class="form-control btn btn-info" onchange="utils.switch_lang()">
+                                <option value=""{% if cookie_translation is none %} selected{% endif %}>{% trans lang=automatic_translation.name %}Automatic ({{ lang }}){% endtrans %}</option>
+                            {% for lang_code, t in available_translations|dictsort(by="key") %}
+                                <option value="{{ lang_code }}"{% if t == cookie_translation %} selected{% endif %}>{{ t.name }}</option>
+                            {% endfor %}
+                            </select>
+                        </p>
+    {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
