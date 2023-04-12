@@ -23,11 +23,34 @@
 </div>
 {% elif task.statements|length == 1 %}
 <div class="row statement one_statement">
-    <div class="span9">
     {% for lang_code in task.statements %}
-        <a href="{{ contest_url("tasks", task.name, "statements", lang_code) }}" class="btn btn-large btn-success">{% trans %}Download task statement{% endtrans %}</a>
-    {% endfor %}
+    <div 
+    id="rootPdfControl1"
+    data-pdfLink="{{ contest_url("tasks", task.name, "statements", lang_code) }}"
+    data-workerSrc="{{ url("static", "js", "build", "pdf.worker.js") }}"
+    class="pdf-wrapper">
+        <div class="pdf-review">
+            <canvas class="pdf-control-main"></canvas>
+        </div>
+        <div class="pdf-control">
+            <div class="pdf-control-prev pdf-control-button">&lArr;</div>
+            <div class="pdf-control-page">
+                <div>Page: <span class="pdf-control-current">0</span> / <span class="pdf-control-all">0</span></div>
+                <div>Scale:<br><input type="range" class="pdf-control-scale" value="1" step="0.1" min="0.5" max="5"></div>
+            </div>
+            
+            <div class="pdf-control-next pdf-control-button">&rArr;</div>
+            <script>
+            </script>
+        </div>
     </div>
+    <script>
+        pdfReaderInit("rootPdfControl1");
+    </script>
+    <div class="span9 custom-pdf-button">
+        <a href="{{ contest_url("tasks", task.name, "statements", lang_code) }}" class="btn btn-large btn-success">{% trans %}Download task statement{% endtrans %}</a>
+    </div>
+    {% endfor %}
 </div>
 {% else %}
 <div class="statement many_statements">

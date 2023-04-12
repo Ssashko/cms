@@ -1,13 +1,23 @@
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
 .custom-container {
     background-color: #dda50a;
     border: 0;
-    margin: 0;
-    padding: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     color: black;
     width: 100% !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.custom-navbar {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 30px !important;
 }
 .custom-navbar-inner {
     background-color: #dda50a !important;
@@ -57,4 +67,8 @@
     .custom-header-buttons {
         display: block;
     }
+}
+
+.custom-pdf-button {
+    margin-top: 30px;
 }
