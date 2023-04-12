@@ -13,6 +13,9 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.notifications {
+    z-index: 1050 !important;
+}
 .custom-navbar {
     width: 100% !important;
     padding: 0 !important;
@@ -37,9 +40,6 @@ body {
     font-weight: bolder !important;
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     align-self: center;
-}
-.custom-brand::first-letter {
-    color:#dda50a;
 }
 .custom-header-buttons {
     display: flex;
@@ -71,4 +71,8 @@ body {
 
 .custom-pdf-button {
     margin-top: 30px;
+}
+.custom-ranking > a {
+    background-color: #dda50a;
+    color: white;
 }

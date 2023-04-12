@@ -206,12 +206,15 @@ $(document).ready(function () {
                             <li{% if page == "testing" %} class="active"{% endif %}>
                                 <a href="{{ contest_url("testing") }}">{% trans %}Testing{% endtrans %}</a>
                             </li>
-        {% endif %}
+        {% endif %}   
         {% if printing_enabled %}
                             <li{% if page == "printing" %} class="active"{% endif %}>
                                 <a href="{{ contest_url("printing") }}">{% trans %}Printing{% endtrans %}</a>
                             </li>
         {% endif %}
+                            <li class="custom-ranking">
+                                <a href="{{ ranking_addr }}">{% trans %}Ranking{% endtrans %}</a>
+                            </li>
     {% endif %}
                         </ul>
                     </div>

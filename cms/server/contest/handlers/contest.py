@@ -161,6 +161,8 @@ class ContestHandler(BaseHandler):
 
         return participation
 
+    def getAddrRWS(self):
+        return "//" + self.request.host.split(":")[0] + ":" + config.rankings[0].split(":")[-1]
     def render_params(self):
         ret = super().render_params()
 
@@ -174,7 +176,7 @@ class ContestHandler(BaseHandler):
         ret["printing_enabled"] = (config.printer is not None)
         ret["questions_enabled"] = self.contest.allow_questions
         ret["testing_enabled"] = self.contest.allow_user_tests
-
+        ret["ranking_addr"] =  self.getAddrRWS()
         if self.current_user is not None:
             participation = self.current_user
             ret["participation"] = participation
