@@ -71,7 +71,7 @@ $(document).ready(function () {
     {% endif %}
 
     {% if available_translations|length > 1 %}
-                        <p class="navbar-text">
+                        <p class="custom-lang-button navbar-text">
                             <select id="lang" class="form-control btn btn-info" onchange="utils.switch_lang()">
                                 <option value=""{% if cookie_translation is none %} selected{% endif %}>{% trans lang=automatic_translation.name %}Automatic ({{ lang }}){% endtrans %}</option>
                             {% for lang_code, t in available_translations|dictsort(by="key") %}
@@ -95,7 +95,7 @@ $(document).ready(function () {
     {% endif %}
         <div class="login_container">
             <div class="login_box hero-unit">
-                <h1>{% trans %}Welcome{% endtrans %}</h1>
+                <h1 class="custom-login-header">{% trans %}Welcome{% endtrans %}</h1>
                 <p>{% trans %}Please log in{% endtrans %}</p>
                 <form class="form-horizontal" action="{{ contest_url("login") }}" method="POST">
                     {{ xsrf_form_html|safe }}

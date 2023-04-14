@@ -6,10 +6,11 @@
     <link rel="shortcut icon" href="{{ url("static", "favicon.ico") }}" />
     <link rel="stylesheet" type="text/css" href="{{ url("static", "reset.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ url("static", "aws_style.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ url("static", "custom.css") }}">
     <title>Admin</title>
   </head>
-  <body class="admin">
-    <div id="login-content">
+  <body class="custom-admin admin">
+    <div class="custom-login-content" id="login-content">
 
 {% if admin is undefined %}
 <h1>Welcome</h1>

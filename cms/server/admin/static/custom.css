@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+}
+.custom-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-login-content {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}

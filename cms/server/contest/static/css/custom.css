@@ -76,3 +76,11 @@ body {
     background-color: #dda50a;
     color: white;
 }
+.custom-lang-button > select {
+    min-width: 125px;
+}
+.custom-login-header {
+    font-size: 3rem !important;
+    margin-bottom: 30px !important;
+    text-align: center !important;
+}

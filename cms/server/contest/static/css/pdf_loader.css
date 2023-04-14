@@ -1,9 +1,13 @@
 .pdf-wrapper {
     min-width: 300px;
     padding: 5px;
-    margin: 5px;
-    border: 3px solid black;
+    margin: 5px 40px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 5px;
+    padding: 20px;
+
+    background-color: #f5f5f5;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 5px #dda50a;
 }
 .pdf-review {
@@ -12,6 +16,8 @@
 .pdf-review > canvas {
     width: 100%;
     height: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .pdf-control {
     background-color: #dda50a;
@@ -21,7 +27,7 @@
     display: flex;
 }
 .pdf-control-button {
-    background-color: black;
+    background-color: #2e2d2b;
     color: white;
     justify-content: baseline;
     flex-grow: 1;
@@ -30,7 +36,7 @@
     font-size: 30px;
     font-weight: bolder;
     cursor: pointer;
-
+    text-shadow: white 0px 0 10px;
     user-select: none;
 }
 .pdf-control-page {
