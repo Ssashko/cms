@@ -574,6 +574,9 @@ msgstr "Тестування"
 msgid "Printing"
 msgstr "Друк"
 
+msgid "Ranking"
+msgstr "Рейтинг"
+
 msgid "Contest Management System"
 msgstr "Contest Management System"
 

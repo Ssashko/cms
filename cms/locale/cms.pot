@@ -536,6 +536,9 @@ msgstr ""
 msgid "Printing"
 msgstr ""
 
+msgid "Ranking"
+msgstr ""
+
 msgid "Contest Management System"
 msgstr ""
 
